@@ -1,33 +1,38 @@
 package env
 
 import (
+	"os"
 	"testing"
+
+	"github.com/giert/silver-octo-packet/assert"
+	"github.com/giert/silver-octo-packet/mock"
 )
 
 func Test_SetEnv(t *testing.T) {
-	/**
 	tests := []struct {
-		vaultAddr   string
-		pemCert     string
-		githubToken string
+		addr    string
+		pemCert string
+		token   string
+		role    string
 	}{
 		{
-			vaultAddr:   mock.Addr,
-			pemCert:     mockFile,
-			githubToken: mockToken,
+			addr:    mock.Addr,
+			pemCert: mock.File,
+			token:   mock.Token,
+			role:    mock.Role,
 		}, {
-			vaultAddr:   "",
-			pemCert:     "",
-			githubToken: "",
+			addr:    "",
+			pemCert: "",
+			token:   "",
+			role:    "",
 		},
 	}
 
 	for _, test := range tests {
-		SetEnv(test.vaultAddr, test.pemCert, test.githubToken, "", "", "")
-
-		if os.Getenv("VAULT_ADDR") != test.vaultAddr || os.Getenv("VAULT_CACERT") != test.pemCert || os.Getenv("GITHUB_TOKEN") != test.githubToken {
-			t.Fatalf("Unexpected environment variable")
-		}
+		SetEnv(test.addr, test.pemCert, test.token, test.role)
+		assert.Result(t, os.Getenv("ADDR"), test.addr)
+		assert.Result(t, os.Getenv("CACERT"), test.pemCert)
+		assert.Result(t, os.Getenv("TOKEN"), test.token)
+		assert.Result(t, os.Getenv("ROLE"), test.role)
 	}
-	*/
 }
