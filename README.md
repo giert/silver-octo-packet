@@ -1,2 +1,3 @@
 # repotesting
-Just testing GO imports
+
+Just testing GO imports and resuability of packages
