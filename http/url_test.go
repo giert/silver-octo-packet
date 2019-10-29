@@ -1,6 +1,9 @@
 package http
 
-import "testing"
+import (
+	"testing"
+	//mock "github.com/giert/silver-octo-packet/mock"
+)
 
 func Test_MakeUrl(t *testing.T) {
 	// Test empty config
@@ -12,14 +15,12 @@ func Test_MakeUrl(t *testing.T) {
 		t.Fatalf("wanted %s, got %s", want, got)
 	}
 
-	/**
 	// Test good config
-	addr = Mock.Addr
-	path = Mock.Path
+	//addr = mock.Addr
+	//path = mock.Path
 	want = addr + "/v1/" + path
 	got = URL(addr, path)
 	if got != want {
 		t.Fatalf("wanted %s, got %s", want, got)
 	}
-	*/
 }
